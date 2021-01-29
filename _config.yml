@@ -1,0 +1,32 @@
+theme: jekyll-theme-hacker
+title: ''
+description: Personal Technology Blog
+
+repository: 'https://github.com/nikx-gupta/nikx-gupta.github.io'
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+  exclude:
+  - src
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+
+defaults:
+  - 
+    scope:
+      path: ""
+    values:
+      git: https://github.com/nikx-gupta/nikx-gupta.github.io
+      lab: https://github.com/cloudxlabs/tree/master
+      
