@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+html {
+    font-family: sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+    outline: 0;
+}
+
+body {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    /*color: #606c71;*/
+    min-height: 100vh;
+}
+
+.font-9em {
+    font-size: 0.9em;
+}
+
+.font-12em {
+    font-size: 1.2em;
+}
+
+.search-container ul {
+    list-style: none;
+}
+
+.search-container ul li a {
+    color: #999;
+    border-bottom: 1px solid #f6f6f6;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.search-results {
+    position: absolute;
+    width: 100%;
+}
+
+.main-content {
+    -webkit-font-smoothing: antialiased;
+    word-wrap: break-word;
+}
+
+.main-content img {
+    max-width: 100%;
+}
+
+.main-content h5, h4, h3, h2, h1 {
+    color: #007bff
+}
+
+.main-content h3 code {
+    font-size: 1rem;
+}
+
+.main-content h3 {
+    font-size: 1.1rem;
+}
+
+.main-content .heading {
+    color: darkred;
+}

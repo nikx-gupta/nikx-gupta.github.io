@@ -1,11 +1,28 @@
 # Site settings
-title:
-email:
-author:
+name: devignite.in
+title: DevIgnite
+email: nikx.gupta@gmail.com
+author: Nikhil Gupta
 description:
 url:
 
-# Build settings
-permalink: :title/
-sass:
-  sass_dir: css
+repository: 'nikx-gupta/nikx-gupta.github.io'
+
+plugins:
+  - jekyll-archives
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+permalinks: pretty
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: 'category/:name/'
+
+markdown: kramdown
+highlighter: rouge
+

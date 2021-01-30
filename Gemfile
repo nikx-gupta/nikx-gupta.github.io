@@ -14,6 +14,9 @@ gem "kramdown", "~> 2.3.0"
 # For GitHub Pages
 gem "github-pages", group: :jekyll_plugins
 gem 'jekyll-sitemap'
+gem 'jekyll-archives'
+gem 'jekyll-paginate'
+gem 'jekyll-seo-tag'
 
 # Syntax highlighter
 gem 'rouge'
