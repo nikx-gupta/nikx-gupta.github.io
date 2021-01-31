@@ -2,19 +2,19 @@
 title: Index
 ---
 
-### Important
+## Note
 - All `.NET` solution currently use `.NET Core 5.0`
 
-### Topics
+## Topics
 - ### [Docker](docker)
 - ### [Kubernetes](kubernetes)
-- ### [Azure](Azure)
-- ### [Hosting](Hosting)
+- ### [Azure](azure)
+- ### [Hosting](hosting)
 - ### Tools
-  - [OpenSSL](OpenSSL)
-- ### General
+  - [OpenSSL](openssl)
+- ### [Basics](basics)
 	- ### Networking
-		- ### [TCP/IP](Topics/Networking/TcpIp)
+		- ### [TCP/IP](basics/networking/TcpIp)
 - ### Setup
 	- ### [Install MongoDb](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu)
 		- Provide SSH connection to connect outside from Virtual Machine
