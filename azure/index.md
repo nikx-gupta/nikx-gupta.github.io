@@ -25,6 +25,7 @@ title: Azure Dashboard
     - [Management Groups](ResourceManagement/ManagementGroups)
     - [Resource Movement](ResourceManagement/Movement)
 - ### [Security](Security)
+    - [Key Vault](KeyVault)
 - ### Container
     - [Azure Container Registry](ACS)
     - [Docker](Docker)
