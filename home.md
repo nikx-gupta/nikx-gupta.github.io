@@ -9,6 +9,7 @@ title: Index
 - ### [Docker](docker)
 - ### [Kubernetes](kubernetes)
 - ### [Azure](Azure)
+- ### [Hosting](Hosting)
 - ### Tools
   - [OpenSSL](OpenSSL)
 - ### General

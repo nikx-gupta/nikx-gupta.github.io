@@ -1,5 +1,6 @@
 $(function () {
     formatNavigation();
+    formatTables();
     $("#important,#topics,#commands,#references").addClass("heading");
     formatCLICommands();
 });
@@ -11,13 +12,22 @@ function formatNavigation() {
         $("#navigation").append(`<li class="breadcrumb-item"><a href="/home">Home</a></li>`);
     else
         $("#navigation").hide();
-    for (let i = 0; i < crumbs.length - 1; i++) {
+    for (let i = 0; i < crumbs.length; i++) {
         const name = crumbs[i].replace(".html", "");
         const link = "/" + crumbs.slice(0, crumbs.length - 1).join('/');
         // console.log(link);
-        if (name !== "home")
-            $("#navigation").append(`<li class="breadcrumb-item"><a href="${link}">${name}</a></li>`);
+        if (name !== "home") {
+            if (i === crumbs.length - 1) {
+                $("#navigation").append(`<li class="breadcrumb-item active" aria-current="page">${name}</li>`);
+            } else {
+                $("#navigation").append(`<li class="breadcrumb-item"><a href="${link}">${name}</a></li>`);
+            }
+        }
     }
+}
+
+function formatTables() {
+    $("table").addClass("table table-dark");
 }
 
 function formatCLICommands() {
