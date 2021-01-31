@@ -1,5 +1,5 @@
 ---
-title: Build Docker Image and Launch Simple App
+title: Create Go App in Docker
 ---
 
 ### Topics

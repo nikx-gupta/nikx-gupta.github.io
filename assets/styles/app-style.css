@@ -67,6 +67,11 @@ body {
     font-size: 1.1rem;
 }
 
+.main-content h2 {
+    font-size: 1.3rem;
+    color: darkred;
+}
+
 .main-content .heading {
     color: darkred;
 }
