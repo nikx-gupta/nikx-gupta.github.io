@@ -6,7 +6,7 @@ $(function () {
 
 function formatNavigation() {
     const url = window.location.href;
-    const crumbs = url.split('/').slice(3);
+    const crumbs = url.split('/').slice(3).filter(x => x !== "");
     if (crumbs.length > 1)
         $("#navigation").append(`<li class="breadcrumb-item"><a href="/home">Home</a></li>`);
     else
@@ -18,8 +18,6 @@ function formatNavigation() {
         if (name !== "home")
             $("#navigation").append(`<li class="breadcrumb-item"><a href="${link}">${name}</a></li>`);
     }
-
-    console.log(crumbs);
 }
 
 function formatCLICommands() {
