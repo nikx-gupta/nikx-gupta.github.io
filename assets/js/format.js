@@ -24,7 +24,7 @@ function formatNavigation() {
 
 function formatCLICommands() {
     console.log("updating CLI Commands");
-    $("[id=cli]").each((i, el_cli) => {
+    $("[id=cli],[id=arm-templates]").each((i, el_cli) => {
         $(el_cli).addClass("alert alert-success");
         $(el_cli).next("ul:eq(0)").each((i, el_sub_cli) => {
             console.log("Updating CLI: ", $(el_sub_cli));

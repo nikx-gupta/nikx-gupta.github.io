@@ -41,6 +41,10 @@ body {
     width: 100%;
 }
 
+.main-content ul li {
+    margin-bottom: 0.1rem;
+}
+
 .main-content {
     -webkit-font-smoothing: antialiased;
     word-wrap: break-word;
