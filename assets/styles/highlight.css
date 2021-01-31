@@ -38,12 +38,12 @@
 }
 
 .highlight .gd {
-    color: #000000;
+    color: #d7e2e6;
     background-color: #ffdddd;
 }
 
 .highlight .ge {
-    color: #000000;
+    color: #d7e2e6;
     font-style: italic;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .highlight .gi {
-    color: #000000;
+    color: #d7e2e6;
     background-color: #ddffdd;
 }
 
@@ -81,27 +81,27 @@
 }
 
 .highlight .kc {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
 .highlight .kd {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
 .highlight .kn {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
 .highlight .kp {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
 .highlight .kr {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .highlight .k, .highlight .kv {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .highlight .nl {
-    color: #990000;
+    color: #cccbcb;
     font-weight: bold;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .highlight .nt {
-    color: #000080;
+    color: #318000;
 }
 
 .highlight .vc {
@@ -257,12 +257,12 @@
 }
 
 .highlight .ow {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
 .highlight .o {
-    color: #000000;
+    color: #d7e2e6;
     font-weight: bold;
 }
 
@@ -296,23 +296,24 @@
 
 .main-content code {
     padding: 2px 4px;
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    /*font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
     font-size: 1.0rem;
-    font-weight: bold;
+    font-weight: 200;
     font-style: italic;
     /*color: #567482;*/
-    background-color: #f3f6fa;
+    /*background-color: #f3f6fa;*/
+    background-color: #242629;
     border-radius: 0.3rem;
 }
 
 .main-content pre {
     padding: 0.8rem;
-    margin-top: 0;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    /*font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;*/
     color: #567482;
     word-wrap: normal;
-    background-color: #f3f6fa;
+    background-color: #0f1017;
     border: solid 1px #dce6f0;
     border-radius: 0.3rem;
 }
@@ -321,7 +322,7 @@
     padding: 0;
     margin: 0;
     font-size: 0.9rem;
-    color: #567482;
+    color: #d7e2e6;
     word-break: normal;
     white-space: pre;
     background: transparent;

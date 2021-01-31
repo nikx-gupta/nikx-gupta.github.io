@@ -1,6 +1,6 @@
 $(function () {
     formatNavigation();
-    $("#important,#topics,#cli").addClass("heading");
+    $("#important,#topics,#commands,#references").addClass("heading");
     formatCLICommands();
 });
 

@@ -9,6 +9,10 @@ html {
     /* 2 */
 }
 
+a {
+    color: #007bff;
+}
+
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
@@ -31,20 +35,9 @@ body {
     font-size: 1.2em;
 }
 
-.search-container ul {
-    list-style: none;
-}
-
-.search-container ul li a {
-    color: #999;
-    border-bottom: 1px solid #f6f6f6;
-    display: block;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
 .search-results {
     position: absolute;
+    z-index: 20000;
     width: 100%;
 }
 
@@ -58,7 +51,8 @@ body {
 }
 
 .main-content h5, h4, h3, h2, h1 {
-    color: #007bff
+    color: #007bff;
+    font-weight: 200;
 }
 
 .main-content h3 code {
@@ -71,4 +65,27 @@ body {
 
 .main-content .heading {
     color: darkred;
+}
+
+.main-content .code-text {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.main-content .code-text .code-value {
+    color: #E3E3E3;
+}
+
+.main-content .code-text .code-keyword {
+    color: #569CD6;
+}
+
+.main-content .code-text .code-alias {
+    color: orange;
+}
+
+.main-content .code-text .code-param {
+    display: inline-block;
+    color: orange;
+    /* color: #00e600; */
 }

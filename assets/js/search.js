@@ -154,7 +154,7 @@ $(function () {
             resultsContainer: null,
             json: [],
             success: Function.prototype,
-            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            searchResultTemplate: '<li class="list-group-item list-group-item-action list-group-item-dark"><a href="{url}">{title}</a></li>',
             templateMiddleware: Function.prototype,
             sortMiddleware: function () {
                 return 0
