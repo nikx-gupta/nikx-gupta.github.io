@@ -28,7 +28,6 @@ title: Azure Dashboard
     - [Key Vault](KeyVault)
 - ### Container
     - [Azure Container Registry](ACS)
-    - [Docker](Docker)
 - ### [DevOps](DevOps)
 - ### Apply policies to control and audit resource creation
     - Azure Policy

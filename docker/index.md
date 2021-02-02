@@ -2,27 +2,87 @@
 title: Docker
 ---
 
-### Topics
+# Topics
 - ### [Cgroups](cgroups)
 - ### [Build & launch simple Go App](SimpleApp)
 - ### [Join two containers in same Network Namespace](SameNetworkNamespace)
+- ### [Capture Container Kill Event](capture_sigterm)
 
-### Important
-
-
+# Commands
+- ### All Running Containers
+```bash
+docker ps -a
+```
+	- ##### Response
+	```text
+	CONTAINER ID   IMAGE         COMMAND       CREATED        STATUS                    PORTS     NAMES
+	4a25dd4a4066   ubuntu        "/bin/bash"   15 hours ago   Up 15 hours                         ubuntu
+	c70ec89bf8c6   hello-world   "/hello"      15 hours ago   Exited (0) 15 hours ago             hello
+	```
+  
+- ### All Running Container Id's
+```bash
+docker ps -aq
+docker container ls -a
+```
+	- ##### Response
+	```text
+	4a25dd4a4066
+	c70ec89bf8c6
+	```
+		
 - ### Remove all running containers
 ```bash
 docker rm -f $(docker ps -aq)
 ```
 
+- ### To exit the container without stopping it `Ctrl+P Ctrl+Q`
+  
+- ### Provide Environment variables to container
+```bash
+docker exec -it -e VAR_NAME=VAR_VALUE <container name> /bin/sh
+# echo $VAR_NAME
+# exit
+```
+- ### Command `exec` is used to run commands in `running` container
+```bash
+docker exec -it <container name> /bin/sh
+# echo $VAR_NAME
+# exit
+```
+  
 - ### Run two containers in same `network namespace`
 ```bash
 docker rm -f $(docker ps -aq)
 ```
 
-### CLI Commands {#cli}
+# Logs
+- ### See `tail` logs. Needs to run again for latest logs
+```bash
+docker container logs --tail 5 nginx
+```
+- ### See continuous log stream with tail logs using `follow`
+```bash
+docker container logs --tail 5 --follow nginx
+```
+- ## Logging Drivers
+	- ### `docker container logs` command is only available for `json-file` and `journald` drivers
 
-- ### docker inspect response
+	Driver	  |   Description
+	none        |   No log output for the specific container is produced.
+	json-file   |   This is the default driver. The logging information is stored in files, formatted as JSON.
+	journald    |   If the journals daemon is running on the host machine, we can use this driver. It forwards logging to the journald daemon.
+	syslog      |   If the syslog daemon is running on the host machine, we can configure this driver, which will forward the log messages to the syslog daemon.
+	gelf        |   When using this driver, log messages are written to a Graylog Extended Log Format (GELF) endpoint. Popular examples of such endpoints are Graylog and Logstash.
+	fluentd     |   Assuming that the fluentd daemon is installed on the host system, this driver writes log messages to it.
+
+	- ### Change Logging driver
+	```bash
+	docker container run --name nginx -d -p:8080:80 --log-driver json-file nginx 
+	```
+	
+# CLI Json
+- ### docker inspect JSON
 ```json
  {
       "Id": "ab9fab7cc9614e3bee627e2239a6b757c38bd71d9434d3f59fb03e77a45d5d91",
@@ -236,3 +296,7 @@ docker rm -f $(docker ps -aq)
       }
   }
 ```
+	- ##### Extract State from response
+	```text
+	docker container inspect -f "{{ "{{ json .State "}} }}" <container name> | jq	
+	```

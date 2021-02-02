@@ -54,7 +54,20 @@ body {
     max-width: 100%;
 }
 
-.main-content h5, h4, h3, h2, h1 {
+.main-content h1 {
+    font-size: 1.3rem;
+    color: #04ce5e;
+    font-weight: 200;
+}
+
+.main-content h2 {
+    font-size: 1.2rem;
+    color: #d14;
+    font-weight: 300;
+}
+
+.main-content h3 {
+    font-size: 1.1rem;
     color: #007bff;
     font-weight: 200;
 }
@@ -63,13 +76,22 @@ body {
     font-size: 1rem;
 }
 
-.main-content h3 {
-    font-size: 1.1rem;
+.main-content h4 {
+    font-size: 1rem;
+    color: #20d0af;
+    font-weight: 200;
 }
 
-.main-content h2 {
-    font-size: 1.3rem;
-    color: darkred;
+.main-content h5 {
+    font-size: 0.9rem;
+    color: #922dc5;
+    font-weight: 200;
+}
+
+.main-content h6 {
+    font-size: 0.8rem;
+    color: #922dc5;
+    font-weight: 200;
 }
 
 .main-content .heading {

@@ -1,8 +1,9 @@
 $(function () {
     formatNavigation();
     formatTables();
-    $("#important,#topics,#commands,#references").addClass("heading");
+    // $("#important,#topics,#commands,#references").addClass("heading");
     formatCLICommands();
+    formatCollapseCode();
 });
 
 function formatNavigation() {
@@ -30,66 +31,31 @@ function formatTables() {
     $("table").addClass("table table-dark");
 }
 
-function formatCLICommands() {
-    console.log("updating CLI Commands");
-    $("[id=cli],[id=arm-templates]").each((i, el_cli) => {
-        $(el_cli).addClass("alert alert-success");
-        $(el_cli).next("ul:eq(0)").each((i, el_sub_cli) => {
-            console.log("Updating CLI: ", $(el_sub_cli));
-            let collapse_panels = '';
-            $(el_sub_cli).find("li>h3").each((i, el_h3) => {
-                collapse_panels += createCollapsiblePanel(el_h3);
-            });
+function formatCollapseCode() {
+    // $("div.language-json").addClass("table table-dark").moreContent();
+}
 
-            let final_html = `<div class="accordion" id="cli_accordion">${collapse_panels}</div>`;
-            $(el_sub_cli).replaceWith(final_html);
+function formatCLICommands() {
+    // console.log("updating CLI Commands");
+    $("[id*=cli],[id*=arm]").each((i, el_cli) => {
+        // $(el_cli).addClass("alert alert-success");
+        $(el_cli).next("ul:eq(0)").each((i, el_sub_cli) => {
+            // console.log("Updating CLI: ", $(el_sub_cli));
+            $(el_sub_cli).find("li>h3").each((i, el_h3) => {
+                const id = "headId_" + Math.random().toString().substr(2, 8);
+                // collapse_panels += createCollapsiblePanel(el_h3);
+                $(el_h3).parent().find(".language-json").wrap(function () {
+                    return `
+                        <div class="collapse" id="${id}">
+                          <div class="card card-body">
+                          </div>
+                        </div>
+                    `;
+                });
+                $(el_h3).replaceWith(`<a data-toggle="collapse" 
+                            href="#${id}" role="button" aria-expanded="false"
+                            aria-controls="${id}">${$(el_h3).text()}</a>`);
+            });
         });
     });
 };
-
-function createCollapsiblePanel(el_content) {
-    // let sib = $(el_content).next("div.highlighter-rouge:eq(0)");
-    let sib = $(el_content).next();
-    const id = "id" + Math.random().toString().substr(2, 8);
-    const head_text = $(el_content).text();
-    const head_id = "head" + id;
-    const html = sib.prop('outerHTML');
-    sib.remove();
-    return `
-          <div class="card">
-            <div class="card-header" id="${head_id}">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#${id}" aria-expanded="true" aria-controls="${id}">
-                    ${head_text}
-                </button>
-              </h5>
-            </div>
-            <div id="${id}" class="collapse hide" aria-labelledby="${head_id}" data-parent="#cli_accordion">
-              <div class="card-body">
-                ${html}
-              </div>
-            </div>
-          </div>
-        `;
-
-    // let collapseHtml = `
-    //         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    //           <div class="panel panel-default">
-    //             <div class="panel-heading" role="tab" id="headingOne">
-    //               <h4 class="panel-title">
-    //                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#${id}" aria-expanded="true" aria-controls="collapseOne">
-    //                   ${$(el_content).text()}
-    //                 </a>
-    //               </h4>
-    //             </div>
-    //              <div id="${id}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-    //                 <div class="panel-body">
-    //                     ${html}
-    //                 </div>
-    //              </div>
-    //           </div>
-    //         </div>
-    //         `;
-
-    //$(el_content).replaceWith(collapseHtml);
-}
