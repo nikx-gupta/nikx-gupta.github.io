@@ -9,6 +9,10 @@ title: Vagrant
 	  ```bash
 	  curl -o vbox_key.asc https://www.virtualbox.org/download/oracle_vbox_2016.asc 	
 	  ```
+	- #### Add key to Apt Sources
+	  ```bash
+	  sudo apt-key add oracle_vbox_2016.asc 	
+	  ```
 	- #### Add below line to `/etc/apt/sources.list` (below example is for Ubuntu 20 focal)
 	  ```bash
       echo deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib | sudo tee -a /etc/apt/sources.list
@@ -29,3 +33,6 @@ title: Vagrant
 		  ```bash
 	      sudo ln -s /home/nikx/Desktop/vagrant /usr/local/bin
 	      ```  
+
+# References
+- ### [Vagrant Image List](https://app.vagrantup.com/boxes/search)

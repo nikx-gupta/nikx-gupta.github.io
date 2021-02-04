@@ -2,11 +2,21 @@
 title: Docker
 ---
 
+# Architecture
+![Center_200](/assets/images/docker_01.png)
+
 # Topics
 - ### [Cgroups](cgroups)
+- ### [Namespaces](namespaces)  
+	- #### [Join two containers using PID namespace](JoinPIDNamespace)
+	- #### [Join two containers using Network Namespace](SameNetworkNamespace)
 - ### [Build & launch simple Go App](SimpleApp)
-- ### [Join two containers in same Network Namespace](SameNetworkNamespace)
 - ### [Capture Container Kill Event](capture_sigterm)
+- ### [Change Default Logging Driver](ChangeLoggingDriver)
+- ### [Test Memory Hogging of container](capture_container_stats)
+
+# Installation
+- ## [Linux](https://docs.docker.com/engine/install/ubuntu/)
 
 # Commands
 - ### All Running Containers
@@ -50,11 +60,20 @@ docker exec -it <container name> /bin/sh
 # echo $VAR_NAME
 # exit
 ```
-  
-- ### Run two containers in same `network namespace`
-```bash
-docker rm -f $(docker ps -aq)
-```
+- ### See running container as process in host machine 
+	- #### Get container id for running container
+	```bash
+	docker inspect <container name> -f "{{json .Id}}"
+	```
+	- #### `ps -aef --forest` - List all running process in a hierarchy
+    ```bash
+	ps -aef --forest | grep containerd
+	```
+    - ##### Response (observer highlighted text)
+		- ##### PID `978 is parent containerd` process
+		- ##### PID `4881` is containerd-shim process managed by above PID
+	![Center_300](/assets/images/docker_03_ps_aef.PNG)
+
 
 # Logs
 - ### See `tail` logs. Needs to run again for latest logs
@@ -298,5 +317,9 @@ docker container logs --tail 5 --follow nginx
 ```
 	- ##### Extract State from response
 	```text
-	docker container inspect -f "{{ "{{ json .State "}} }}" <container name> | jq	
+	docker container inspect -f "{{ "{{ json .State "}} }}" <container name or container id> | jq	
+	```
+	- ##### Extract PID from response
+	```text
+	docker container inspect -f "{{ "{{ json .State.Pid "}} }}" <container name or container id> | jq	
 	```

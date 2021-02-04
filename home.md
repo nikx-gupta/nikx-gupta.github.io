@@ -8,7 +8,9 @@ title: Index
 # Topics
 - ### [Docker](docker)
 - ### [Kubernetes](kubernetes)
-- ### [Azure](azure)
+- ## Cloud
+  - ### [Google Cloud Paltform (GCP)](gcp)
+  - ### [Azure](azure)
 - ### [Hosting](hosting)
 - ### Tools
   - [Vagrant](vagrant)

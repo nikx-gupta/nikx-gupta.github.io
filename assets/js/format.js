@@ -16,7 +16,7 @@ function formatNavigation() {
     for (let i = 0; i < crumbs.length; i++) {
         const name = crumbs[i].replace(".html", "");
         const link = "/" + crumbs.slice(0, crumbs.length - 1).join('/');
-        // console.log(link);
+        console.log(link);
         if (name !== "home") {
             if (i === crumbs.length - 1) {
                 $("#navigation").append(`<li class="breadcrumb-item active" aria-current="page">${name}</li>`);

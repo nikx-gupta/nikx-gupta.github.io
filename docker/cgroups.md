@@ -2,7 +2,7 @@
 title: CGroups
 ---
 
-## Description
+# Description
 Control Groups (cgroups) provide a mechanism for easily managing and monitoring system resources, by partitioning below things across all `cgroups`
 - CPU time
 - System memory
@@ -10,6 +10,11 @@ Control Groups (cgroups) provide a mechanism for easily managing and monitoring 
 - Network Bandwidth
 - Monitoring
 
+# Properties of cgroup
+- All cgroups are created under path `sys/fs/cgroups/<cgroup type>`
+- cgroup inherit proerties from parent cgroup in hierarchical manner upto the root cgroup
+
+# Commands  
 - ### When a container is created `cgroup` is created as folder in `sys/fs/cgroup`. Each folder is a control group
 ```bash
 find /sys/fs/cgroup/* -name docker -type d
@@ -33,7 +38,7 @@ memory.kmem.failcnt    memory.kmem.tcp.max_usage_in_bytes  memory.numa_stat     
 cat /sys/fs/cgroup/memory/docker/<container id>/memory.limit_in_bytes
 ```
 
-## References
+# References
 - ### [Red Hat](https://www.redhat.com/sysadmin/cgroups-part-one)
 - ### [SysAdmin Control Groups](https://sysadmincasts.com/episodes/14-introduction-to-linux-control-groups-cgroups)
 - ### [Linux Manual](https://www.man7.org/linux/man-pages/man7/cgroups.7.html)

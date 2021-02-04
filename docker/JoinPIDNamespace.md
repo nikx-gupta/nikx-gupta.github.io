@@ -1,5 +1,5 @@
 ---
-title: Join two containers in same Network Namespace
+title: Join two containers with PID namespace
 ---
 
 # Steps
@@ -11,18 +11,17 @@ title: Join two containers in same Network Namespace
   ```bash
   ps -af | grep nginx
   ```
-- ### Launch another container in same Network Namespace
+- ### Launch another container in same PID Namespace
     ```bash
-    docker run -it --net container:nginx --name netshoot nicolaka/netshoot
+    docker run -it --pid container:nginx --name netshoot nicolaka/netshoot
     ```
 - ### Get PID for above container
     ```bash
     ps -af | grep netshoot
     ```
-- ### Observe both containers NET namespace values are same
+- ### Observe both containers PID namespace values. They should have same values
     ```bash
     ls -l /proc/<PID for nginx>/ns/pid
     ls -l /proc/<PID for netshoot>/ns/pid
     ```
-
 
