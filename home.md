@@ -12,6 +12,8 @@ title: Index
   - ### [Google Cloud Paltform (GCP)](gcp)
   - ### [Azure](azure)
 - ### [Hosting](hosting)
+- ## Database 
+  - ### [MongoDb](mongodb)
 - ### Tools
   - [Vagrant](vagrant)
   - [OpenSSL](openssl)
@@ -19,8 +21,7 @@ title: Index
 	- ### Networking
 		- ### [TCP/IP](basics/networking/TcpIp)
 - ### Setup
-	- ### [Install MongoDb](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu)
-		- Provide SSH connection to connect outside from Virtual Machine
+
 
 	- ### Interactive JMES Queries
 		- Install jpterminal package from python
