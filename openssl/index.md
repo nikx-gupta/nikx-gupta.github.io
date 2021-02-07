@@ -1,9 +1,8 @@
 ---
-title: OpenSSL
-description: Keys/Certificates using OpenSSL
+title: Keys/Certificates using OpenSSL
 ---
 
-### Important
+# Important
 - Check if private key is Legacy or new format 
     - if key starts with `BEGIN ENCRYPTED PRIVATE KEY` it is `PKCS#8` `latest` format
     - if key starts with `BEGIN RSA PRIVATE KEY` it is `legacy` format
@@ -17,7 +16,7 @@ description: Keys/Certificates using OpenSSL
     - `PKCS#8 key` - New format for private key store
     - `PKCS#12 (PFX) key and Certificate` - Entire certificate chain with `.p12` or `.pfx` extension
 
-### Commands
+# Commands
 - ### Creation
     - ### Create Private Key
     ```bash
