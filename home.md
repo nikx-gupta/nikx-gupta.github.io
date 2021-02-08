@@ -17,7 +17,8 @@ title: Index
 - ## Virtualization
 	- [Vagrant](vagrant)
 - ## Tools
-  - [OpenSSL](openssl)
+    - [OpenSSL](openssl)
+  	- [Nuget](nuget)
 - ## [Basics](basics)
 	- ### Networking
 		- ### [TCP/IP](basics/networking/TcpIp)

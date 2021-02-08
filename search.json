@@ -13,6 +13,7 @@
      {
         "title"    : "{{ post.title | escape }}",
         "url"      : "{{ site.baseurl }}{{ post.url }}",
+        "description" : "{{ post.description }}",
         "category" : "{{ post.categories }}",
         "date"     : "{{ post.date }}"
       } {% unless forloop.last %},{% endunless %}
