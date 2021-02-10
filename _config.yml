@@ -26,3 +26,9 @@ jekyll-archives:
 markdown: kramdown
 highlighter: rouge
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      repo: https://github.com/nikx-gupta/

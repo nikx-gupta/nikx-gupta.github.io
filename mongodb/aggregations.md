@@ -1,6 +1,6 @@
 ---
 title: MongoDB Aggregations
-description: MongoDB complex aggregation pipelines
+description: MongoDB Update Commands Aggregation
 ---
 
 # Requirements

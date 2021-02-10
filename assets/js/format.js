@@ -33,29 +33,49 @@ function formatTables() {
 
 function formatCollapseCode() {
     // $("div.language-json").addClass("table table-dark").moreContent();
-}
-
-function formatCLICommands() {
-    // console.log("updating CLI Commands");
-    $("[id*=cli],[id*=arm]").each((i, el_cli) => {
+    $("h5").each((i, el_cli) => {
         // $(el_cli).addClass("alert alert-success");
-        $(el_cli).next("ul:eq(0)").each((i, el_sub_cli) => {
+        $(el_cli).next("div.language-json,div.language-bash,div.language-text").each((i, el_sub_cli) => {
             // console.log("Updating CLI: ", $(el_sub_cli));
-            $(el_sub_cli).find("li>h3").each((i, el_h3) => {
-                const id = "headId_" + Math.random().toString().substr(2, 8);
-                // collapse_panels += createCollapsiblePanel(el_h3);
-                $(el_h3).parent().find(".language-json").wrap(function () {
-                    return `
+            const id = "headId_" + Math.random().toString().substr(2, 8);
+            // collapse_panels += createCollapsiblePanel(el_h3);
+            $(el_sub_cli).wrap(function () {
+                return `
                         <div class="collapse" id="${id}">
                           <div class="card card-body">
                           </div>
                         </div>
                     `;
-                });
-                $(el_h3).replaceWith(`<a data-toggle="collapse" 
-                            href="#${id}" role="button" aria-expanded="false"
-                            aria-controls="${id}">${$(el_h3).text()}</a>`);
             });
+            $(el_cli).text($(el_cli).text() + ' (Click to Expand)');
+            $(el_cli).wrap(`<a data-toggle="collapse" 
+                            href="#${id}" role="button" aria-expanded="false"
+                            aria-controls="${id}"></a>`);
         });
     });
+}
+
+function formatCLICommands() {
+    // console.log("updating CLI Commands");
+    // $("[id*=cli],[id*=arm]").each((i, el_cli) => {
+    //     // $(el_cli).addClass("alert alert-success");
+    //     $(el_cli).next("ul:eq(0)").each((i, el_sub_cli) => {
+    //         // console.log("Updating CLI: ", $(el_sub_cli));
+    //         $(el_sub_cli).find("li>h3").each((i, el_h3) => {
+    //             const id = "headId_" + Math.random().toString().substr(2, 8);
+    //             // collapse_panels += createCollapsiblePanel(el_h3);
+    //             $(el_h3).parent().find(".language-json").wrap(function () {
+    //                 return `
+    //                     <div class="collapse" id="${id}">
+    //                       <div class="card card-body">
+    //                       </div>
+    //                     </div>
+    //                 `;
+    //             });
+    //             $(el_h3).replaceWith(`<a data-toggle="collapse"
+    //                         href="#${id}" role="button" aria-expanded="false"
+    //                         aria-controls="${id}">${$(el_h3).text()}</a>`);
+    //         });
+    //     });
+    // });
 };

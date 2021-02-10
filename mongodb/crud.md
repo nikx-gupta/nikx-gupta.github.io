@@ -1,6 +1,6 @@
 ---
 title: MongoDB CRUD Operations
-description: MongoDB Create/Insert/Update/Upsert/Delete Functions
+description: 
 ---
 
 # Inserting Documents

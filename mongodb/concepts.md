@@ -51,3 +51,18 @@ title: MongoDB Concepts
 		- Field names cannot contain null character
 		- Field names cannot start from `dollar-sign($)`
 		- Duplicate fields are not allowed but no error is thrown when inserting documents with duplicate fields, However it is allowed from mongo shell but second occurrence of the field will overwrite the first
+- ## Oplog
+	- Essential of MongoDB replication across slave nodes. It is a circual buffer which stores all data changes due to CRUD operations
+	- Database queries doesnt generate any oplog records only crud operations
+	- oplog records are stored in idempotent format so that we receive same result when applying it multiple times
+	- check replication stats
+		```bash
+        db.oplog.rs.stats()
+		```
+	- it is different form `Wired Tiger Journalling` as latter is used to recover database when datafiles become corrupted.
+	
+- ## Write Concern
+	- It enforces rule on mongodb to provide an acknowledgement from at least n no of cluster nodes for each write operation.
+	- Default value is {w: 1} which means only primary node acknowledgement is required
+	- Should be use with caution as it can severely decrease write performance
+	
