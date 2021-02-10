@@ -55,22 +55,23 @@ body {
 }
 
 .main-content h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #04ce5e;
     font-weight: 200;
 }
 
 .main-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #d14;
     font-weight: 300;
 }
 .main-content h2 code {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #d65212;
 }
 
 .main-content h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #007bff;
     font-weight: 200;
 }

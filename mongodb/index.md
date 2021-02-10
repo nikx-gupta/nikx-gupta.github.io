@@ -7,8 +7,11 @@ title: MongoDB Database
 - ## Database
 - ## [Collections](collections)
 - ## [Database Views](dbviews)  
-- ## [Queries](query)  
-- ## [CRUD Operation](crud)  
+- ## [Queries](query)
+- ## [Projections](projections)  
+- ## [CRUD Operation](crud)
+- ## [Aggregate Operators](aggregations)
+- ## [Aggregate Pipelines](pipelines)
 - ## [Issues & Fixes](issues)
 
 

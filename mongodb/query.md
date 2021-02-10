@@ -46,8 +46,8 @@ db.<collection name>.<query function>(<query criteria>)
         }
 	```
 
-# Query Functions
-- ## Filter `find`
+# Filter Functions
+- ## `find`
 	- ### all documents
 	  - #### Mongo Shell
 		  ```bash
@@ -108,7 +108,7 @@ db.<collection name>.<query function>(<query criteria>)
 		   ```bash
 		   db.movies.estimatedDocumentCount()
 		   ```
-- ## `Filters` - Below are the various filter operators in Mongo
+- ## `Filter Operators` - Below are the various filter operators in Mongo
 	- ### `eq` - `Equals` is also an implicit operator when provided in below format
 	    - if target field is array eq will search the provided value in array values
 		- #### Mongo Shell
@@ -337,9 +337,9 @@ db.<collection name>.<query function>(<query criteria>)
 	    - #### .NET Core
 	      ```csharp
 	      ```
-- ## `Array Operators`
+- ## `Array Filter Operators`
   - ### `By Elements` - Search the field data that contains at least one of the provided values
-	  - #### Mongo Shell
+	  - #### field `cast` is an array
 	    ```bash
 		db.movies.find({ 'cast' : 'Adam Sandler' }, { title: 1, cast: 1 }).pretty()
 		```
@@ -347,7 +347,7 @@ db.<collection name>.<query function>(<query criteria>)
 	    ```csharp
 		```
   - ### `Multiple By Elements` - Search the field data that contains at least one of the provided values
-	- #### Mongo Shell
+	- #### field `cast` is an array
 	  ```bash
 	  db.movies.find({ 'cast' : 'Adam Sandler', 'cast' : 'John Turturro' }, { title: 1, cast: 1 }).pretty()
 	  ```
@@ -355,7 +355,7 @@ db.<collection name>.<query function>(<query criteria>)
 	  ```csharp
 	  ```
   - ### `Array By Array` - Search the field data that contains the values in exactly same order
-	- #### Mongo Shell
+	- #### field `languages` is an array
 	  ```bash
       db.movies.find({ 'languages' : ['English', 'German'] }, { title: 1, languages: 1 }).pretty()
 		
@@ -376,47 +376,7 @@ db.<collection name>.<query function>(<query criteria>)
 	- #### .NET Core
 	  ```csharp
 	  ```
-  - ### `array projection` - with help of `$` operator we can exclude undesired values from the array field we are searching for
-	- #### Without the projection - output contains other languages as well
-	  ```bash
-      db.movies.find({ 'languages' : 'English' }, { title: 1, languages: 1 }).pretty()
-	  ```
-    - #### With Projection - output is limited to first matching element
-      ```bash 			
-      db.movies.find({ 'languages' : 'English' }, { title: 1, 'languages.$': 1 }).pretty()
-	  ```
-	- #### .NET Core
-	  ```csharp
-	  _coll.Find(Builders<Movie>.Filter.Eq(x => x.languages, new[] { "English" }))
-		.Project(Builders<Movie>.Projection.Include(x => x.languages).Include(x => x.title))
-		.ToCursor()
-		.ConvertBson<Movie>();
-	  ```
-  - ### `$slice` - limit the output values of any array field
-	- #### Without the `$slice` - languages field contains other languages as well
-	  ```bash
-      db.movies.find({ 'languages' : 'English' }, { title: 1, languages: 1 }).pretty()
-	  ```
-	- #### With `$slice` - limit the languages field output to first 3 values. Note that this field is not in filter criteria
-	  ```bash 			
-	  db.movies.find({ 'title': 'Youth Without Youth' }, { title: 1, 'languages': { $slice: 3 } }).pretty()
-	  ```
-	- #### With `$slice` - negative value starts from end of array
-	  ```bash 			
-	  db.movies.find({ 'rated': 'APPROVED' }, { title: 1, 'languages': { $slice: -1 } }).pretty()
-	  ```
-	- #### With `$slice` - two values
-	  - `$slice` : [`skip elements` : `elements to return after skip index`]
-	  ```bash 			
-	  db.movies.find({ 'rated': 'APPROVED' }, { title: 1, 'languages': { $slice: [1, 3] } }).pretty()
-	  ```
-	- #### .NET Core
-	  ```csharp
-      _coll.Find(Builders<Movie>.Filter.Eq(x => x.languages, new[] { "English" }))
-            .Project(Builders<Movie>.Projection.Include(x => x.languages).Include(x => x.title).Slice(x => x.languages, noOfElements))
-            .ToCursor()
-            .ConvertBson<Movie>();
-	  ```
+
 - ## `Limiting & Batch Size of Result`
   - ### `limit` - limit the results as per provided value
       ```bash
