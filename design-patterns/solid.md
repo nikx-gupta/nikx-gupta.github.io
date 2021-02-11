@@ -46,6 +46,45 @@ title: SOLID Design Pattern
 
 ## `O`pen Closed Principle
 - Referred as `Open for Extension, but Closed for Modification`
-- Looking back at problem, lets say you have deployed the libraries to different post offices. Some offices come with requirement of add feature to deliver the mail through Roadways
-  and some through Airways. Now, as there was a method `deliverMails` developers added all the requirements in the same method and delivered it to all the sub systems (post office in our case).
-  Now there was some bug in the airways implementation and thus it was fixed and new version was recirculated.   
+- Let's assume we have mapped the above model to a software system and manny developers are working on it both in Main branch. Developers create a library which contains functionality and is delivered to all sub systems (different post offices here)
+  Now, some sub systems or clients want to enable different modes of delivery like airways and some wants to add feature for road delivery. The maintainers of library added all this functionality in
+  method `deliverMails`
+  ```csharp
+  public void deliverMails() { 
+    deliveryByRoad();
+    deliverByAir();
+  } 
+  ```	
+  - Let's identify issues with this type of system
+    - Isues Fix and Bugs will overlap each other because of changes in same method all the time
+    - Different versions are created and if not there will be delay in feature implementation for different functionalities
+	- If different delivery system needs to be added, that will add more complexity and more issues
+  	  
+  - Let's apply OCP principle and see how we can try to solve this
+  ```csharp
+  public interface IDeliverySystem { 
+    public void deliverMail();
+  }
+  
+  public class RoadDeliverySystem : IDeliverySystem { public void deliverMail() { 
+        // code to deliver through road
+    } 
+  }
+  public class AirwayDeliverySystem : IDeliverySystem { public void deliverMail() { 
+        // code to deliver through Airways
+    } 
+  }
+  ```
+  - As per OCP principle, we `Closed` the system `IDeliverySystem` for modification by declaring it as interface, but being an interface it is `Open` for Extension
+    which means, the behavior of the system can be extended in multiple and independent ways without modifying the base system.
+
+## `L`iskov Substitution Principle
+- If we substitute a super class reference with an object of any of its subclass, the program should not break. Few of the restrictions are posed by compiler 
+  in different langguages, when using polymorphism in OOPS.
+  
+
+## [`I`nterface Seggregation](https://www.baeldung.com/java-interface-segregation)
+
+## [`D`ependency Inversion](https://stackify.com/dependency-inversion-principle/)
+- High Level modules should not depend on low level modules directly. Both should depend on abstraction.
+
