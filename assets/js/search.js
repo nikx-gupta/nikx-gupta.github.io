@@ -50,8 +50,8 @@ $(function () {
 				let e = [];
 				a();
 				for (let n = 0, r = t.length; n < r; n++) {
-					o.push(t[n]);
-					e.push(t[n]);
+					// o.push(t[n]);
+					e.push(s(t[n]));
 				}
 				// console.log("o", o);
 				// console.log("e", e);
@@ -61,7 +61,7 @@ $(function () {
 		clear: a,
 		search: function S(t) {
 			return t ? function a(t, e, n, r) {
-				for (let i = [], o = 0; o < t.length && i.length < r.limit; o++) {
+				for (var i = [], o = 0; o < t.length && i.length < r.limit; o++) {
 					let u = d(t[o], e, n, r);
 					u && i.push(u)
 				}
@@ -81,6 +81,10 @@ $(function () {
 
 	function a() {
 		return o.length = 0, o
+	}
+
+	function s(t) {
+		return o.push(t), o
 	}
 
 	function d(t, e, n, r) {

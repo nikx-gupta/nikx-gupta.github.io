@@ -8,6 +8,8 @@ title: MongoDB Database
 - ## [Collections](collections)
 - ## [Database Views](dbviews)  
 - ## [Queries](query)
+- ## Operators
+  - ### [Comparison](operators/comparison)
 - ## [Projections](projections)  
 - ## [CRUD Operation](crud)
 - ## [Aggregate Operators](aggregations)
@@ -181,3 +183,5 @@ title: MongoDB Database
 - ### [MongoDB Driver - Github](https://github.com/mongodb/mongo-csharp-driver)
 - ### [MongoDB Driver Documentation](http://mongodb.github.io/mongo-csharp-driver/2.11/reference/driver/definitions/#projections)
 - ### [Mongo Documentation](https://docs.mongodb.com/manual/introduction/)
+- ### [Atomicity](https://docs.mongodb.com/manual/core/write-operations-atomicity/)
+- ### [Compound Indexes](https://docs.mongodb.com/manual/core/index-compound/#prefixes)

@@ -24,7 +24,9 @@ title: Index
 - ## [Basics](basics)
 	- ### Networking
 		- ### [TCP/IP](basics/networking/TcpIp)
-- ### [Languages and Frameworks](frameworks)	
+- ### [Languages and Frameworks](frameworks)
+- ## [Design Patterns](design-patterns)
+  - ### [SOLID](design-patterns/solid)
 - ### Setup
 	- ### Interactive JMES Queries
 		- Install jpterminal package from python
