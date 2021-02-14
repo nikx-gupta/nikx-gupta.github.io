@@ -4,6 +4,7 @@ title: CSharp
 
 # Topics
 - ### Change Language Version in Project `(.csproj)` Properties
+- ### [Async/Await](asyncawait)  
 - ## Features (9.0)
 	- ### Initialization doesn't require providing Explicit Type on RHS
 	```csharp

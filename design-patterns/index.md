@@ -4,4 +4,6 @@ title: Design Patterns
 
 # Topics
 - ## [SOLID](solid)
-- ## [Creational Patterns](creational)
+- ## Creational
+	- ### [Builder](builder)
+	- ### [Factory](factory)
