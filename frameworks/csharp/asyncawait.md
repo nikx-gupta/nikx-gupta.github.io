@@ -10,7 +10,6 @@ category: Asynchronous programming
 	- ### When method execution encounters `await` operator, it captures the current `Synchronization Context` and starts execution of the task which may or may not be in a new thread
 	- ### When the task completes any thread can resume the operation using the Captured Context Information
 
-
 ## Important
 - ### Never block an asynchronous operation. Blocking an asynchronous operation will block calling thread from starting other tasks which can cause a deadlock in certain conditions
 - ### It is possible to return `void` from async method, but it should only be used for event handler

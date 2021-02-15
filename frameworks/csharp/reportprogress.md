@@ -9,6 +9,8 @@ category: Parallel Programming, Parallelism
 	- `T` is type of object you want to report. It can be Value or Ref type
 	- When an instance is created for the `Progress<T>` is captures the current Thread context, and call its callback within that context. This means
 	  it you can update the UI Thread (WindowsApp, Classic ASP.NET app) also within callback handler
+- ## Important
+	- if `T` is mutable type then always instantiate a new object while calling `Report` method
 	
 - ## Execute async task in background and report progress to UI thread
   - ### Declare the progress argument type as `ReportItem`
