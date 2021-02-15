@@ -13,5 +13,5 @@ title: Routing
   ```csharp
   [ApiController]
   [Route("<area name>/[controller]/[action]")]
-  public class MoviesController
+  public class MoviesController { }
   ```

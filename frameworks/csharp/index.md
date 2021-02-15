@@ -4,7 +4,9 @@ title: CSharp
 
 # Topics
 - ### Change Language Version in Project `(.csproj)` Properties
-- ### [Async/Await](asyncawait)  
+- ### [Multi-Threading](multithread)
+- ### [Async/Await](asyncawait)
+- ### [Report Progress from Async Tasks](reportprogress)
 
 
 - ## Features (9.0)

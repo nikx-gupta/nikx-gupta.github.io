@@ -42,3 +42,6 @@ title: Index
         docker run -it --name teamcity-server-instance -v /home/nikx/team-city/datadir:/data/teamcity_server/datadir -v /home/nikx/team-city/logs:/opt/teamcity/logs -p 9000:8111 jetbrains/teamcity-server
 		docker run -it --name agent-01 -e SERVER_URL="http://192.168.136.129:9000/" -v /home/nikx/config:/data/teamcity_agent/conf jetbrains/teamcity-agent		
         ```
+
+## References
+- [Liquid Expressions](https://shopify.github.io/liquid/)
