@@ -7,3 +7,6 @@ title: Design Patterns
 - ## Creational
 	- ### [Builder](builder)
 	- ### [Factory](factory)
+	- ### [Adapter](adapter)
+	- ### [Singleton](singleton)
+	

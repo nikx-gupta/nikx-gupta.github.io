@@ -11,7 +11,7 @@ function format_image() {
         const attrAlt = $(img).attr('alt').split('_');
         const src = $(img).prop('src');
         if (attrAlt[0] === "Center")
-            $(img).addClass('img-center');
+            $(img).addClass('img-center img-thumbnail my-1');
         if (attrAlt.length > 1)
             $(img).width(attrAlt[1]);
         $(img).wrap(`<a href=\"${src}\" data-toggle=\"lightbox\" class="ml-4"></a>`)

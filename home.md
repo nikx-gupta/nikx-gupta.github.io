@@ -4,6 +4,7 @@ title: Index
 
 # Note
 - All `.NET` solution currently use `.NET Core 5.0`
+- All Commands/Code are editable, you can edit in place as required and copy
 
 # Topics
 - ### [Docker](docker)

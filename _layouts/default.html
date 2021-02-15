@@ -32,7 +32,6 @@ endcapture %}
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="/home.html">Index</a></li>
@@ -44,6 +43,9 @@ endcapture %}
         </div>
     </div>
 </nav>
+<div class="col-6 text-left">
+    <code>Last Updated on  {{ site.time | date: "%a - %H:%M, %b %d, 20%y" }} </code>
+</div>
 <main role="main" class="container-fluid flex-fill px-0">
     <div class="row mx-2 my-2">
         <div class="mx-auto">
@@ -62,11 +64,10 @@ endcapture %}
     <div class="container-fluid border pt-2 mt-5 bg-dark text-white">
         <div class="row">
             <div class="col-6">
-                {{ site.author }}
+                {{ site.author }} <br />
+                Copyright © {{ site.name }} - 2021
             </div>
-            <div class="col-6 text-right">
-                Copyright © {{ site.name }} - {{ site.time | date: "%Y" }}
-            </div>
+
         </div>
     </div>
 </footer>

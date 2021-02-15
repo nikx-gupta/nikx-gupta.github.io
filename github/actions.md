@@ -36,7 +36,10 @@ title: Github Actions
   workflow_dispatch:
     inputs:
       version:
-        description: "<this will be diplayed in GitHub workflow UI>"
+        description: "Publish shared Service Package"
         required: true
   ```
+    - `description` - this will be diplayed in GitHub workflow UI
+    - It will look as below  
+	![Center_300](/assets/images/github_actions_01.PNG)
 
