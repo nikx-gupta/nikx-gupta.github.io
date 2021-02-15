@@ -7,17 +7,21 @@ title: Index
 - All Commands/Code are editable, you can edit in place as required and copy
 
 # Topics
-- ### [Docker](docker)
-- ### [Kubernetes](kubernetes)
+- ## Containers
+	- ### [Docker](docker)
+	- ### [Kubernetes](kubernetes)
 - ## Cloud
 	- ### [Google Cloud Paltform (GCP)](gcp)
     - ### [Azure](azure)
+	- ### [AWS](aws)
 - ### [Hosting](hosting)
 - ## Database
 	- ### [MongoDb](mongodb)
+	- ### [SQL](sql)
+	- ### [MySQL](mysql)
 - ## Virtualization
 	- [Vagrant](vagrant)
-- ## CICD Tools
+- ## [DevOps](devops)
     - ### [Github Actions](github/actions)
 - ## Tools
     - [OpenSSL](openssl)
@@ -25,7 +29,10 @@ title: Index
 - ## [Basics](basics)
 	- ### Networking
 		- ### [TCP/IP](basics/networking/TcpIp)
-- ### [Languages and Frameworks](frameworks)
+- ## [Languages and Frameworks](frameworks)
+  - ### [C#](frameworks/csharp)
+    - #### [Testing](frameworks/csharp/testing)
+  - ### [AspNetCore](frameworks/aspnetcore)
 - ## [Design Patterns](design-patterns)
   - ### [SOLID](design-patterns/solid)
 - ### Setup
@@ -43,23 +50,23 @@ title: Index
 		docker run -it --name agent-01 -e SERVER_URL="http://192.168.136.129:9000/" -v /home/nikx/config:/data/teamcity_agent/conf jetbrains/teamcity-agent		
         ```
 # TODO
-Design patterns & design principals
-C#
-Asp.net MVC
-Web api
-Angular 6 & above
-Asp.net core
-microservices
-Containers
-Dockers
-Kuberenets
-Azure
-AWS
-GCP
-Devops
-Sql server\my sql
-Test frameworks like MS test, Nunit, Xunit etc. & undestanding on TDD, BDD, DDD.
-Commonly used tools for app monitoring (dynatrace\app dynamics), code scan (fortify scans), code coverages(Sonar qube),  etc.
+- ### Design patterns & design principals
+- ### C#
+- ### Asp.net MVC
+- ### Web api
+- ### Angular 6 & above
+- ### Asp.net core
+- ### microservices
+- ### Containers
+- ### Dockers
+- ### Kuberenets
+- ### Azure
+- ### AWS
+- ### GCP
+- ### Devops
+- ### Sql server\my sql
+- ### Test frameworks like MS test, Nunit, Xunit etc. & undestanding on TDD, BDD, DDD.
+- ### Commonly used tools for app monitoring (dynatrace\app dynamics), code scan (fortify scans), code coverages(Sonar qube),  etc.
 
 ## References
 - [Liquid Expressions](https://shopify.github.io/liquid/)
