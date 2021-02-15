@@ -42,6 +42,24 @@ title: Index
         docker run -it --name teamcity-server-instance -v /home/nikx/team-city/datadir:/data/teamcity_server/datadir -v /home/nikx/team-city/logs:/opt/teamcity/logs -p 9000:8111 jetbrains/teamcity-server
 		docker run -it --name agent-01 -e SERVER_URL="http://192.168.136.129:9000/" -v /home/nikx/config:/data/teamcity_agent/conf jetbrains/teamcity-agent		
         ```
+# TODO
+Design patterns & design principals
+C#
+Asp.net MVC
+Web api
+Angular 6 & above
+Asp.net core
+microservices
+Containers
+Dockers
+Kuberenets
+Azure
+AWS
+GCP
+Devops
+Sql server\my sql
+Test frameworks like MS test, Nunit, Xunit etc. & undestanding on TDD, BDD, DDD.
+Commonly used tools for app monitoring (dynatrace\app dynamics), code scan (fortify scans), code coverages(Sonar qube),  etc.
 
 ## References
 - [Liquid Expressions](https://shopify.github.io/liquid/)
