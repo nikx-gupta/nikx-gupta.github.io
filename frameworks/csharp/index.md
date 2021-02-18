@@ -17,6 +17,16 @@ title: CSharp
 	    // With Constructor
 	    SampleClass obj = new(<param1>, <param2>);
 	```
+    - ### Don't need to specify type while declaring array on RHS
+    ```csharp
+    // Previous Method
+    int[] intArray = new int[] {1,2,3};
+  
+    // Now
+    var intArrayRHS = new [] { 1,2,3 }
+    int[] intArrayLHS = [1,2,3];
+	```
+	
 - ## Features (8.0)
 	- ### Reference types can be assigned Nullables
 	```csharp

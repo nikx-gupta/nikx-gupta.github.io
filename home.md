@@ -30,9 +30,10 @@ title: Index
 	- ### Networking
 		- ### [TCP/IP](basics/networking/TcpIp)
 - ## [Languages and Frameworks](frameworks)
-  - ### [C#](frameworks/csharp)
-    - #### [Testing](frameworks/csharp/testing)
-  - ### [AspNetCore](frameworks/aspnetcore)
+    - ### [C#](frameworks/csharp)
+        - #### [Testing](frameworks/csharp/testing)
+    - ### [AspNetCore](frameworks/aspnetcore)
+	- ### [Java](frameworks/java)
 - ## [Design Patterns](design-patterns)
   - ### [SOLID](design-patterns/solid)
 - ### Setup

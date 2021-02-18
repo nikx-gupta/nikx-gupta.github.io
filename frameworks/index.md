@@ -6,7 +6,7 @@ title: Programming Languages & Frameworks
 - ## [CSharp](csharp)
 	- ### DotNetCore
 	- ### [AspNetCore](aspnetcore)
-- ## Java
+- ## [Java](java)
 - ## Python
 - ## Javascript
 - ## Nodejs

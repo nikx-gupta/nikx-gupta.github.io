@@ -10,15 +10,15 @@ category: Asynchronous programming
 	- ### When method execution encounters `await` operator, it captures the `Execution Context` of `Current Thread` and starts execution of the task which may or may not be in a new thread
 	- ### When the task completes any thread can resume the operation using the Captured Context Information, generally a pool thread
 
-### What classes are reponsible for Async State Machine
+### What classes are responsible for Async State Machine
 - `AsyncTaskMethodBuilder` in System.Runtime.CompilerServices
-	- Used by compiler to generate code for Async method
+	- Used by a compiler to generate code for Async method
 - `AsyncMethodBuilderCore` in System.Runtime.CompilerServices
 	- It captures the ExecutionContext and is responsible fo starting the awaited Task
 	
 ## Important
 - ### Never block an asynchronous operation. Blocking an asynchronous operation will block calling thread from starting other tasks which can cause a deadlock in certain conditions
-- ### It is possible to return `void` from async method, but it should only be used for event handler
+- ### It is possible to return `void` from async method, but it should only be used for event handler, also it is difficult to propagate exceptions when return type is not Task
 - ### Try to cache the use of `Task.Result` if you are using same result repeatedly as each Task objects incurs penalty
 	```csharp
 	public static readonly Task<int> emptyTask = Task.FromResult(0);
@@ -117,4 +117,67 @@ category: Asynchronous programming
                 Console.WriteLine(e);
             }
     }
+	```
+
+## Execute Async Tasks in Parallel
+- ### Due to the nature of async/await parallel execution is not in conventional manner
+- ### Declare & Execute multiple async tasks methods
+    - Wrap each Task in a separate Async method call
+	- Even when the tasks are iterated in decreasing order i.e. 3,2,1 the output will be 1,2,3 because all tasks are executed in parallel
+	
+	```csharp
+    public static async Task<int> DelayTask(int delayInSeconds) {
+            await Task.Delay(TimeSpan.FromSeconds(delayInSeconds));
+            return delayInSeconds;
+        }
+  
+    public static async Task ProcessParallelAsync() {
+            Task<int> t1 = DelayTask(1);
+            Task<int> t3 = DelayTask(3);
+            Task<int> t2 = DelayTask(2);
+
+            var taskArray = new [] { t3, t2, t1 };
+
+            Task[] executionTasks = taskArray.Select(async x => {
+                var result = await x;
+                Trace.WriteLine(result);
+            }).ToArray();
+
+            await Task.WhenAll(executionTasks);
+        }
+	```
+    - #### Response
+		```csharp
+		1
+		2
+		3
+		```
+- ### Wrong way of Parallel Execution
+	- The tasks are iterated in decreasing order i.e. 3,2,1 and the output will be 3,2,1 as they are executed sequentially
+	
+  ```csharp
+  public static async Task<int> DelayTask(int delayInSeconds) {
+		  await Task.Delay(TimeSpan.FromSeconds(delayInSeconds));
+		  return delayInSeconds;
+	  }
+
+  public static async Task ProcessParallelAsync() {
+		  Task<int> t1 = DelayTask(1);
+		  Task<int> t3 = DelayTask(3);
+		  Task<int> t2 = DelayTask(2);
+
+		  // Note: The Tasks are in decreasing order of delay time i.e. 3,2,1 but response should be 1,2,3
+		  var taskArray = new [] { t3, t2, t1 };
+		  
+          foreach (var task in taskArray) {
+            var result = await task;
+            Trace.WriteLine(result);
+          }
+	  }
+  ```
+  - #### Response
+	```csharp
+	  3
+	  2
+	  1
 	```
