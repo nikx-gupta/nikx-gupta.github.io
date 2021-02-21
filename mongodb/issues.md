@@ -54,4 +54,5 @@ title: MongoDB Issues and Fixes
 		  [BsonElement("id")]
 		  public string ImdbId { get; set; }
 		  ```
-
+	- ### Debug Mongo Source Code for correct filter operations in class MongoCollectionImpl<TDocument> 
+	
