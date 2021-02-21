@@ -34,6 +34,7 @@ title: Index
         - #### [Testing](frameworks/csharp/testing)
     - ### [AspNetCore](frameworks/aspnetcore)
 	- ### [Java](frameworks/java)
+	- ### [Golang](frameworks/golang)
 - ## [Design Patterns](design-patterns)
   - ### [SOLID](design-patterns/solid)
 - ### Setup

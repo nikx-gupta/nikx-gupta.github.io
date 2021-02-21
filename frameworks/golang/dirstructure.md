@@ -70,3 +70,5 @@ category: golang go
 - ### The `exe` file will be placed in `bin` folder inside project root folder. Navigate to `/home/nikx/src/bin` in above case
 
 	
+## References
+- [Go Code](https://golang.org/doc/code)
