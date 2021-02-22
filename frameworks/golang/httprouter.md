@@ -2,7 +2,7 @@
 title: GoLang Http Router
 ---
 
-## Impportant
+## Important
 - Library ***github.com/julienschmidt/httprouter***
 - ### Supports
 	- Variables & parameters in Route Path

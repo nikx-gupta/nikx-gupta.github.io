@@ -3,7 +3,7 @@ title: GoLang Http Server
 description: Mux HttpListener
 ---
 
-## Impportant
+## Important
 - ### Internally http listener functions use instant `DefaultServerMux` which is default implementation of internal struct `ServeMux`
 - ### It allows only simle Urls. It doesn't support complex patterns like paramters in Url and REST patterns. Use [HttpRouter](httprouter) for that
 

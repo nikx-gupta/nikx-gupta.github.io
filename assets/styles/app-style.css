@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 html {
-    font-family: sans-serif;
-    /* 1 */
-    -ms-text-size-adjust: 100%;
-    /* 2 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */
 }
 
 a {
@@ -100,7 +94,6 @@ body {
 
 .main-content .code-text {
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
 }
 
 .main-content .code-text .code-value {
