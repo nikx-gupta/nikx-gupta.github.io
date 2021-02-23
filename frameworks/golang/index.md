@@ -10,12 +10,15 @@ title: GoLang
 	- ### [Http Router](httprouter)
 
 
+## Activities
+- ### [Create Gorilla RPC Http Server](gorillarpc)
+
 ## Packages
 - ### Middleware Authentication
 	- github.com/satori/go.uuid
 - ### Write middleware directly on `net/http`
 	- github.com/urfave/negroni
-	
+
 ## References
 - [Go Structure](https://golang.org/doc/code)
 - [Go Http Router](https://golangr.com/golang-http-server/)

@@ -10,3 +10,5 @@ title: Design Patterns
 	- ### [Adapter](adapter)
 	- ### [Singleton](singleton)
 	
+## References
+- ### [Microsoft Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
