@@ -1,6 +1,16 @@
 $(function () {
     colorAzcli()
     formatPreCodeBlocks();
+
+    $(".wp-block-jetpack-markdown").each((i, wp_bl) => {
+        let nextDiv = $(wp_bl).next("p");
+        // console.log(nextDiv);
+        // console.log( $(nextDiv).text());
+        // console.log($(nextDiv).text()==='');
+        if ($(nextDiv).text() === '') {
+            $(nextDiv).remove();
+        }
+    });
 })
 
 function formatPreCodeBlocks() {
@@ -166,4 +176,7 @@ function readExpression(lineSplit, startIndex) {
 
     return i;
 }
+
+
+
 
